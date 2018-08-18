@@ -27,6 +27,9 @@ class DecoderRNN(nn.Module):
     
     def forward(self, features, captions):
         pass
+        # outputs should be a PyTorch tensor with size [batch_size, captions.shape[1], vocab_size]
+        # Your output should be designed such that outputs[i,j,k] contains the model's predicted score, indicating how likely the j-th token in the i-th caption in the batch is the k-th token in the vocabulary. 
+        return outputs
 
     def sample(self, inputs, states=None, max_len=20):
         " accepts pre-processed image tensor (inputs) and returns predicted sentence (list of tensor ids of length max_len) "
